@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\backend_C#_.NET",
-    "\\backend_C#_.NET\\Database"
+    "\\backend_dotNET"
   ],
-  "SelectedNode": "\\backend_C#_.NET\\Database\\DbContext.cs",
   "PreviewInSolutionExplorer": false
 }
