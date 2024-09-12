@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tHONRV9Oohs=",
+  "dgSpecHash": "/3BHYVhl7FM=",
   "success": true,
   "projectFilePath": "C:\\My Projects\\Documents_Management_System_App\\backend\\backend.csproj",
   "expectedPackageFiles": [
@@ -95,7 +95,7 @@
     "C:\\Users\\OBelhadi\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
     "C:\\Users\\OBelhadi\\.nuget\\packages\\mono.texttemplating\\3.0.0-preview-0052-g5d0f76c785\\mono.texttemplating.3.0.0-preview-0052-g5d0f76c785.nupkg.sha512",
     "C:\\Users\\OBelhadi\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
-    "C:\\Users\\OBelhadi\\.nuget\\packages\\npgsql\\8.0.3\\npgsql.8.0.3.nupkg.sha512",
+    "C:\\Users\\OBelhadi\\.nuget\\packages\\npgsql\\8.0.4\\npgsql.8.0.4.nupkg.sha512",
     "C:\\Users\\OBelhadi\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.0-preview.7\\npgsql.entityframeworkcore.postgresql.9.0.0-preview.7.nupkg.sha512",
     "C:\\Users\\OBelhadi\\.nuget\\packages\\system.codedom\\6.0.0\\system.codedom.6.0.0.nupkg.sha512",
     "C:\\Users\\OBelhadi\\.nuget\\packages\\system.collections.immutable\\8.0.0-rc.2.23479.6\\system.collections.immutable.8.0.0-rc.2.23479.6.nupkg.sha512",

@@ -1,9 +1,8 @@
-﻿using System.Data;
-using System.Reflection.Metadata;
+﻿using backend.Models;
 
-namespace backend.Models
+namespace backend.GraphQL.QueryTypes
 {
-    public class Tenant
+    public class TenantType
     {
         public int TenantId { get; set; }
         public string TenantName { get; set; }
@@ -12,6 +11,7 @@ namespace backend.Models
 
         // Navigation Properties
         public ICollection<User> Users { get; set; }
+        public ICollection<Role> Roles { get; set; }
         public ICollection<Document> Documents { get; set; }
         public ICollection<Payment> Payments { get; set; }
     }

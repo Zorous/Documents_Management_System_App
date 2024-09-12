@@ -1,45 +1,42 @@
 using backend.Database;
 using backend.GraphQL.QueryType;
+using backend.GraphQL.QueryTypes;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Load configuration from appsettings.json
+builder.Configuration
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .AddEnvironmentVariables();
+
+// Add DbContext with PostgreSQL configuration
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+// Add services to the container
 builder.Services.AddControllersWithViews();
 
-// Configure GraphQL integration
+// Configure GraphQL
 builder.Services.AddGraphQLServer().AddQueryType<Query>();
-
-
 
 var app = builder.Build();
 
-
-
-// Configure the HTTP request pipeline.
+// Configure the HTTP request pipeline
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-
-    var connectionString = builder.Configuration.GetConnectionString("MyAppCs");
-    builder.Services.AddDbContext<AppDbContext>(options =>
-    //POSTGREY Integration
-        options.UseNpgsql(connectionString));
 }
 
-
-//GraphQL Integration
+// GraphQL Integration
 app.MapGraphQL();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");

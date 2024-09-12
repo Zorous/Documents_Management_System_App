@@ -1,6 +1,8 @@
-﻿namespace backend.Models
+﻿using backend.Models;
+
+namespace backend.GraphQL.QueryTypes
 {
-    public class Document
+    public class DocumentType
     {
         public int DocumentId { get; set; }
         public int TenantId { get; set; }

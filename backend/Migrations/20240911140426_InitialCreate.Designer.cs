@@ -12,8 +12,8 @@ using backend.Database;
 namespace backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240909133949_first_migration")]
-    partial class first_migration
+    [Migration("20240911140426_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -165,12 +165,7 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("TenantId")
-                        .HasColumnType("integer");
-
                     b.HasKey("RoleId");
-
-                    b.HasIndex("TenantId");
 
                     b.ToTable("Roles");
                 });
@@ -272,12 +267,17 @@ namespace backend.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("integer");
 
+                    b.Property<int>("TenantId")
+                        .HasColumnType("integer");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
                     b.HasKey("UserRoleId");
 
                     b.HasIndex("RoleId");
+
+                    b.HasIndex("TenantId");
 
                     b.HasIndex("UserId");
 
@@ -333,17 +333,6 @@ namespace backend.Migrations
                     b.Navigation("Tenant");
                 });
 
-            modelBuilder.Entity("backend.Models.Role", b =>
-                {
-                    b.HasOne("backend.Models.Tenant", "Tenant")
-                        .WithMany("Roles")
-                        .HasForeignKey("TenantId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Tenant");
-                });
-
             modelBuilder.Entity("backend.Models.RolePermission", b =>
                 {
                     b.HasOne("backend.Models.Permission", "Permission")
@@ -353,7 +342,7 @@ namespace backend.Migrations
                         .IsRequired();
 
                     b.HasOne("backend.Models.Role", "Role")
-                        .WithMany("RolePermissions")
+                        .WithMany()
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -377,8 +366,14 @@ namespace backend.Migrations
             modelBuilder.Entity("backend.Models.UserRole", b =>
                 {
                     b.HasOne("backend.Models.Role", "Role")
-                        .WithMany("UserRoles")
+                        .WithMany()
                         .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("backend.Models.Tenant", "Tenant")
+                        .WithMany()
+                        .HasForeignKey("TenantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -389,6 +384,8 @@ namespace backend.Migrations
                         .IsRequired();
 
                     b.Navigation("Role");
+
+                    b.Navigation("Tenant");
 
                     b.Navigation("User");
                 });
@@ -403,20 +400,11 @@ namespace backend.Migrations
                     b.Navigation("RolePermissions");
                 });
 
-            modelBuilder.Entity("backend.Models.Role", b =>
-                {
-                    b.Navigation("RolePermissions");
-
-                    b.Navigation("UserRoles");
-                });
-
             modelBuilder.Entity("backend.Models.Tenant", b =>
                 {
                     b.Navigation("Documents");
 
                     b.Navigation("Payments");
-
-                    b.Navigation("Roles");
 
                     b.Navigation("Users");
                 });
