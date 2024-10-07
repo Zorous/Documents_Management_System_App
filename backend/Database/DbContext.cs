@@ -16,10 +16,10 @@ namespace backend.Database
         public DbSet<Payment> Payments { get; set; }
 
         // Constructor
-        public AppDbContext(DbContextOptions<AppDbContext> options)
-            : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
 
+    }
 }
