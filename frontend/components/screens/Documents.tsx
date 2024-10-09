@@ -1,11 +1,11 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 const Documents = () => {
     return (
-        <View>
-            
-        </View>
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ fontSize: 50}}>Document Screen</Text>
+      </View>
     );
 }
 
