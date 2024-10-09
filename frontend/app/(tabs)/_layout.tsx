@@ -1,28 +1,25 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+// app/tabs/_layout.tsx
+import React from "react";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+//import TabHome from "./index";  // Assuming you have a home screen in the tabs folder
+import { Dashboard } from "@/components/screens/Dashboard";
+import Documents from "@/components/screens/Documents";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const Tab = createBottomTabNavigator();
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
-    <Tabs
-      screenOptions={{
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
-          ),
-        }}
+    <Tab.Navigator>
+      <Tab.Screen 
+        name="Home" 
+        component={Dashboard} 
+        options={{ headerShown: false }} 
       />
-
-    </Tabs>
+      <Tab.Screen 
+        name="Documents" 
+        component={Documents} 
+        options={{ title: "Documents" }} 
+      />
+    </Tab.Navigator>
   );
 }

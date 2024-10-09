@@ -1,7 +1,7 @@
 import React from 'react';
 import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { Colors } from '../../constants/Colors';
+import { COLORS } from '../../constants/Colors';
 import { FeatherIconName } from '../../types';
 
 type ButtonProps = {
@@ -12,14 +12,14 @@ type ButtonProps = {
 
 export const Button: React.FC<ButtonProps> = ({ icon, label, onPress }) => (
   <TouchableOpacity style={styles.button} onPress={onPress}>
-    <Feather name={icon} size={24} color={Colors.background} />
+    <Feather name={icon} size={24} color={COLORS.background} />
     <Text style={styles.buttonText}>{label}</Text>
   </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: Colors.secondary,
+    backgroundColor: COLORS.secondary,
     borderRadius: 10,
     padding: 15,
     alignItems: 'center',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
   },
   buttonText: {
-    color: Colors.background,
+    color: COLORS.background,
     marginTop: 5,
     fontWeight: 'bold',
   },

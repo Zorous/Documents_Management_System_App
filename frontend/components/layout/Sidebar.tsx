@@ -1,47 +1,65 @@
-const { Command } = require('commander');
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { Colors } from '../../constants/Colors';
-import { menuItems } from '../../constants/menuItems';
-import { FeatherIconName } from '../../types';
+import { COLORS } from '../../constants/Colors';
+import { SIZES, FONTS } from '../../constants/theme';
+import { MenuItem } from '../../types';
 
-export const Sidebar: React.FC = () => (
-  <View style={styles.sidebar}>
-    <View style={styles.logo}>
-      <Text style={styles.logoText}>DocManager</Text>
+type SidebarProps = {
+  menuItems: MenuItem[];
+};
+
+export const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
+  return (
+    <View style={styles.sidebar}>
+      <View style={styles.logoContainer}>
+        <Text style={styles.logoText}>DocManager</Text>
+      </View>
+      <ScrollView style={styles.menuContainer}>
+        {menuItems.map((item, index) => (
+          <TouchableOpacity
+            key={index}
+            style={styles.menuItem}
+            onPress={item.onPress}
+            accessibilityRole="button"
+            accessibilityLabel={item.label}
+          >
+            <Feather name={item.icon} size={24} color={COLORS.white} />
+            <Text style={styles.menuText}>{item.label}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
     </View>
-    {menuItems.map((item, index) => (
-      <TouchableOpacity key={index} style={styles.menuItem}>
-        <Feather name={item.icon} size={24} color={Colors.background} />
-        <Text style={styles.menuText}>{item.label}</Text>
-      </TouchableOpacity>
-    ))}
-  </View>
-);
+  );
+};
 
 const styles = StyleSheet.create({
   sidebar: {
-    width: 220,
-    backgroundColor: Colors.primary,
-    padding: 20,
+    width: SIZES.width * 0.7,
+    maxWidth: 300,
+    backgroundColor: COLORS.primary,
+    paddingTop: SIZES.padding * 2,
   },
-  logo: {
-    marginBottom: 30,
+  logoContainer: {
+    alignItems: 'center',
+    marginBottom: SIZES.padding * 2,
   },
   logoText: {
-    color: Colors.background,
-    fontSize: 24,
-    fontWeight: 'bold',
+    ...FONTS.h1,
+    color: COLORS.white,
+  },
+  menuContainer: {
+    flex: 1,
   },
   menuItem: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 20,
+    paddingVertical: SIZES.padding,
+    paddingHorizontal: SIZES.padding * 1.5,
   },
   menuText: {
-    color: Colors.background,
-    marginLeft: 10,
-    fontSize: 16,
+    ...FONTS.body3,
+    color: COLORS.white,
+    marginLeft: SIZES.padding,
   },
 });

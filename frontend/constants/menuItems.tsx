@@ -1,9 +1,9 @@
-import { MenuItem } from '../types/MenuItem';
+import { MenuItem, FeatherIconName } from '../types';
 
 export const menuItems: MenuItem[] = [
-  { icon: 'home', label: 'Home' },
-  { icon: 'file-text', label: 'Documents' },
-  { icon: 'folder', label: 'Categories' },
-  { icon: 'users', label: 'Teams' },
-  { icon: 'settings', label: 'Settings' },
+  { icon: 'home', label: 'Home', onPress() {}, },
+  { icon: 'file-text', label: 'Documents', onPress() {}, },
+  { icon: 'folder', label: 'Categories', onPress() {}, },
+  { icon: 'users', label: 'Teams', onPress() {}, },
+  { icon: 'settings', label: 'Settings' , onPress() {},},
 ];
