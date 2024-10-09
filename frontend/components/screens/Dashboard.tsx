@@ -50,7 +50,6 @@ export function Dashboard() {
 
   return (
     <View style={styles.container}>
-      {isSidebarVisible && <Sidebar menuItems={menuItems} />}
       <View style={styles.mainContent}>
         <Header 
           greeting={greeting} 

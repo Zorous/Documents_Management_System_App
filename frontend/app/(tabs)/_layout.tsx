@@ -1,43 +1,130 @@
-import * as React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from './home';
-import { Tabs } from 'expo-router';
-import { Dashboard } from '@/components/screens/Dashboard';
+// @ts-nocheck
+import * as React from "react";
+import { useEffect, useState, useRef } from "react";
+
+import { Text, StyleSheet, View, Dimensions, Animated } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Tabs } from "expo-router";
+import { Dashboard } from "@/components/screens/Dashboard";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Documents from '@/components/screens/Documents';
 
-
-
+import Documents from "@/components/screens/Documents";
+import { Sidebar } from "@/components/layout/Sidebar";
+import { menuItems } from "@/constants/menuItems";
+import { Feather } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
 const Stack = createNativeStackNavigator();
 
-
 const TabbarLayout = () => {
+  const [screenWidth, setScreenWidth] = useState(
+    Dimensions.get("window").width
+  );
+  const [isSmallScreen, setIsSmallScreen] = useState(screenWidth < 768);
+  const [currentScreen, setCurrentScreen] = useState("Home");
+  const [lastScreen, setLastScreen] = useState("Home");
+
+  const tabBarOpacity = useRef(
+    new Animated.Value(isSmallScreen ? 1 : 0)
+  ).current;
+
+  useEffect(() => {
+    const handleResize = () => {
+      const newScreenWidth = Dimensions.get("window").width;
+      setScreenWidth(newScreenWidth);
+      const isNowSmallScreen = newScreenWidth < 768;
+      setIsSmallScreen(isNowSmallScreen);
+
+      Animated.timing(tabBarOpacity, {
+        toValue: isNowSmallScreen ? 1 : 0,
+        duration: 300,
+        useNativeDriver: true,
+      }).start();
+
+      if (isNowSmallScreen) {
+        setCurrentScreen(lastScreen);
+      }
+    };
+
+    const subscription = Dimensions.addEventListener("change", handleResize);
+    return () => {
+      subscription?.remove();
+    };
+  }, [lastScreen, tabBarOpacity]);
+
+  const handleScreenChange = (screen) => {
+    setCurrentScreen(screen);
+    setLastScreen(screen);
+  };
+
+  // Wrapper component to conditionally render the current screen
+  const CurrentScreenComponent = () => {
+    switch (currentScreen) {
+      case "Home":
+        return <Dashboard />;
+      case "Documents":
+        return <Documents />;
+      default:
+        return null;
+    }
+  };
+
   return (
     <>
-<Tab.Navigator screenOptions={{tabBarStyle:{display: 'none'}}}>
-      <Tab.Screen 
-        name="Home" 
-        component={Dashboard} 
-        options={{ headerShown: false }} 
-      />
-      <Tab.Screen 
-        name="Documents" 
-        component={Documents} 
-        options={{ title: "Documents" }} 
-      />
-    </Tab.Navigator>
-
-    
-
-</>
+      {isSmallScreen ? (
+        <Animated.View style={{ flex: 1, opacity: tabBarOpacity }}>
+          <Tab.Navigator>
+            {menuItems.map((item, index) => (
+              <Tab.Screen
+                key={index}
+                name={item.label} // Assuming each item.label is unique for the tab name
+                icon={item.icon}
+                options={{
+                  headerShown: false,
+                  tabBarIcon: ({ color, size }) => (
+                    <Feather name={item.icon} size={size} color={color} />
+                  ),
+                }}
+                listeners={{
+                  tabPress: () => {
+                    handleScreenChange(item.label); // Handle screen change based on item label
+                  },
+                }}
+              >
+                {() => {
+                  // Here, you can conditionally return the component based on the current screen
+                  switch (item.label) {
+                    case "Home":
+                      return <Dashboard />;
+                    case "Documents":
+                      return <Documents />;
+                    // Add other cases as needed
+                    default:
+                      return null; // Return null or a default component if no match
+                  }
+                }}
+              </Tab.Screen>
+            ))}
+          </Tab.Navigator>
+        </Animated.View>
+      ) : (
+        <View style={{ flexDirection: "row", flex: 1 }}>
+          <Sidebar
+            menuItems={menuItems.map((item) => ({
+              ...item,
+              onPress: () => handleScreenChange(item.label), // Set onPress to change screen
+            }))}
+          />
+          <View style={{ flex: 1 }}>
+            <CurrentScreenComponent />
+          </View>
+        </View>
+      )}
+    </>
   );
-}
-
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -163,6 +250,5 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
-
 
 export default TabbarLayout;

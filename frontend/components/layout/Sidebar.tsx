@@ -9,7 +9,7 @@ type SidebarProps = {
   menuItems: MenuItem[];
 };
 
-export const Sidebar: React.FC<SidebarProps> = ({ menuItems }) => {
+export const Sidebar = ({ menuItems } : SidebarProps) => {
   return (
     <View style={styles.sidebar}>
       <View style={styles.logoContainer}>
