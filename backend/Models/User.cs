@@ -5,6 +5,7 @@
         public int UserId { get; set; }
         public int TenantId { get; set; }
         public string UserName { get; set; }
+        public string ProfilePicture { get; set; } = "https://drive.google.com/uc?export=view&id=1JOUFiILM_vuNa0lPErQEpTeAZSibnwYE";
         public string Email { get; set; }
         public string PasswordHash { get; set; }
         public DateTime CreatedAt { get; set; }

@@ -52,7 +52,11 @@
             },
             "HotChocolate.AspNetCore": {
               "target": "Package",
-              "version": "[14.0.0-rc.1, )"
+              "version": "[13.9.14, )"
+            },
+            "HotChocolate.AspNetCore.Playground": {
+              "target": "Package",
+              "version": "[10.5.5, )"
             },
             "Metaphor.HotChocolate.AspNetCore": {
               "target": "Package",

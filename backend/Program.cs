@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
+using HotChocolate.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -32,27 +33,41 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Register the DatabaseSeeder service
 builder.Services.AddScoped<DatabaseSeeder>();
 
-// Add services to the container
-builder.Services.AddControllersWithViews();
+// Register the DatabaseSeeder service
+builder.Services.AddScoped<DatabaseSeeder>();
+
+// Register query services
+builder.Services.AddScoped<UserQuery>();
+builder.Services.AddScoped<DocumentQuery>();
+builder.Services.AddScoped<RoleQuery>();
+builder.Services.AddScoped<Queries>(); // Add this line
 
 // Configure GraphQL
-builder.Services.AddGraphQLServer()
-    .AddQueryType<Queries>()
+builder.Services
+    .AddGraphQLServer()
+    .AddQueryType<Queries>() // Register the root query type
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
 
-builder.Logging.AddConsole(); // For detailed logs
+
+// Add MVC services
+builder.Services.AddControllersWithViews();
+// Add console logging
+builder.Logging.AddConsole();
 
 var app = builder.Build();
 
-// Ensure database is created and seeded
+// Ensure the database is created and seeded
 using (var scope = app.Services.CreateScope())
 {
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var seeder = scope.ServiceProvider.GetRequiredService<DatabaseSeeder>();
-    dbContext.Database.Migrate(); // Apply migrations
-    seeder.Seed(); // Seed the database
+
+    // Apply pending migrations and seed the database
+    dbContext.Database.Migrate();
+    seeder.Seed();
 }
 
+// Configure the HTTP request pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
@@ -64,7 +79,6 @@ else
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors("AllowAll");
 app.UseStaticFiles();
 app.UseRouting();

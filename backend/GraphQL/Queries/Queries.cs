@@ -1,8 +1,6 @@
 ﻿using HotChocolate;
-using HotChocolate.Types;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using backend.Database;
 using backend.Models;
 
 namespace backend.GraphQL.Queries
@@ -13,7 +11,10 @@ namespace backend.GraphQL.Queries
         private readonly DocumentQuery _documentQuery;
         private readonly RoleQuery _roleQuery;
 
-        public Queries(UserQuery userQuery, DocumentQuery documentQuery, RoleQuery roleQuery)
+        public Queries(
+            [Service] UserQuery userQuery,
+            [Service] DocumentQuery documentQuery,
+            [Service] RoleQuery roleQuery)
         {
             _userQuery = userQuery;
             _documentQuery = documentQuery;
@@ -21,14 +22,14 @@ namespace backend.GraphQL.Queries
         }
 
         // Delegate User-related queries
-        public Task<IEnumerable<User>> GetUsers() => _userQuery.GetUsers(); // Returns non-nullable IEnumerable
-        public Task<User?> GetUserById(int id) => _userQuery.GetUserById(id); // Returns nullable User
+        public Task<IEnumerable<User>> GetUsers() => _userQuery.GetUsers();
+        public Task<User?> GetUserById(int id) => _userQuery.GetUserById(id);
 
         // Delegate Document-related queries
-        public Task<Document?> GetDocumentById(int id) => _documentQuery.GetDocumentById(id); // Returns nullable Document
+        public Task<Document?> GetDocumentById(int id) => _documentQuery.GetDocumentById(id);
 
         // Delegate Role-related queries
-        public Task<Role?> GetRoleById(int id) => _roleQuery.GetRoleById(id); // Returns nullable Role
-        public Task<IEnumerable<Role>> GetRoles() => _roleQuery.GetRoles(); // Returns non-nullable IEnumerable
+        public Task<Role?> GetRoleById(int id) => _roleQuery.GetRoleById(id);
+        public Task<IEnumerable<Role>> GetRoles() => _roleQuery.GetRoles();
     }
 }

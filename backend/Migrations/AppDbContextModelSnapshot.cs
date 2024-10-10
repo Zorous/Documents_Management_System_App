@@ -236,6 +236,10 @@ namespace backend.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ProfilePicture")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<int>("TenantId")
                         .HasColumnType("integer");
 
