@@ -55,5 +55,52 @@ public class DatabaseSeeder
 
             _context.SaveChanges();
         }
+
+        // Seed Departments
+        if (!_context.Departments.Any())
+        {
+            _context.Departments.AddRange(
+                new Department { DepartmentName = "HR", CreatedAt = DateTime.UtcNow },
+                new Department { DepartmentName = "Finance", CreatedAt = DateTime.UtcNow },
+                new Department { DepartmentName = "IT", CreatedAt = DateTime.UtcNow },
+                new Department { DepartmentName = "Marketing", CreatedAt = DateTime.UtcNow },
+                new Department { DepartmentName = "Sales", CreatedAt = DateTime.UtcNow }
+            );
+
+            _context.SaveChanges();
+        }
+
+        // Seed Users
+        if (!_context.Users.Any())
+        {
+            _context.Users.AddRange(
+                new User { UserName = "User1", Email = "user1@tenantA.com", PasswordHash = "hashedpassword1", ProfilePicture = null, CreatedAt = DateTime.UtcNow },
+                new User { UserName = "User2", Email = "user2@tenantB.com", PasswordHash = "hashedpassword2", ProfilePicture = null, CreatedAt = DateTime.UtcNow },
+                new User { UserName = "User3", Email = "user3@tenantC.com", PasswordHash = "hashedpassword3", ProfilePicture = null, CreatedAt = DateTime.UtcNow }
+            );
+
+            _context.SaveChanges();
+        }
+
+        // Seed User_Department_Tenant relationships
+        if (!_context.Tenant_Department_User.Any())
+        {
+            var users = _context.Users.ToList();
+            var tenants = _context.Tenants.ToList();
+            var departments = _context.Departments.ToList();
+
+            // Add relationships
+            if (users.Any() && tenants.Any() && departments.Any())
+            {
+                _context.Tenant_Department_User.AddRange(
+                    new Tenant_Department_User { UserId = users[0].UserId, TenantId = tenants[0].TenantId, DepartmentId = departments[0].DepartmentId },
+                    new Tenant_Department_User { UserId = users[0].UserId, TenantId = tenants[1].TenantId, DepartmentId = departments[1].DepartmentId },
+                    new Tenant_Department_User { UserId = users[1].UserId, TenantId = tenants[0].TenantId, DepartmentId = departments[2].DepartmentId },
+                    new Tenant_Department_User { UserId = users[2].UserId, TenantId = tenants[1].TenantId, DepartmentId = departments[3].DepartmentId }
+                );
+
+                _context.SaveChanges();
+            }
+        }
     }
 }

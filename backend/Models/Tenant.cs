@@ -14,5 +14,8 @@ namespace backend.Models
         public ICollection<User> Users { get; set; }
         public ICollection<Document> Documents { get; set; }
         public ICollection<Payment> Payments { get; set; }
+
+        // Navigation Properties
+        public ICollection<Tenant_Department_User> Tenant_Department_Users { get; set; }
     }
 }

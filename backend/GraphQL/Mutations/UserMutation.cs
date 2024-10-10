@@ -17,9 +17,9 @@ namespace backend.GraphQL.Mutations
         {
             var user = new User
             {
-                TenantId = input.TenantId,
                 UserName = input.UserName,
                 Email = input.Email,
+                ProfilePicture = input.ProfilePicture,
                 PasswordHash = input.PasswordHash,
                 CreatedAt = DateTime.UtcNow
             };
@@ -61,6 +61,7 @@ namespace backend.GraphQL.Mutations
     {
         public int TenantId { get; set; }
         public string UserName { get; set; }
+        public string ProfilePicture { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
     }
