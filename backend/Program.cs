@@ -8,6 +8,7 @@ using System.IO;
 using HotChocolate.AspNetCore;
 using backend.GraphQL.Mutations;
 using HotChocolate;
+using backend.GraphQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -51,12 +52,29 @@ builder.Services.AddScoped<Tenant_Department_User_Query>(); // Add Tenant_Depart
 // Register the main Queries class
 builder.Services.AddScoped<Queries>();
 
+// Register mutation services
+builder.Services.AddScoped<UserMutations>();
+builder.Services.AddScoped<DepartmentMutations>();
+builder.Services.AddScoped<DocumentMutations>();
+builder.Services.AddScoped<RoleMutations>();
+builder.Services.AddScoped<TenantMutations>();
+builder.Services.AddScoped<DocumentAccessMutations>();
+builder.Services.AddScoped<UserRoleMutations>();
+builder.Services.AddScoped<RolePermissionMutations>();
+builder.Services.AddScoped<PaymentMutations>();
+builder.Services.AddScoped<Tenant_Department_UserMutations>();
+builder.Services.AddScoped<PermissionMutations>();
+
+
 // Configure GraphQL
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Queries>() // Register the root query type
+    .AddMutationType<Mutation>() // Register the Mutation class
     .AddType<Schemas>() // Register your AuthorType or any other object types
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
+
+
 
 // Add MVC services
 builder.Services.AddControllersWithViews();
@@ -97,11 +115,11 @@ app.UseRouting();
 
 app.UseEndpoints(endpoints =>
 {
-    endpoints.MapGraphQL();  // Add this for the GraphQL endpoint
+    // Add this for the GraphQL endpoint
+    endpoints.MapGraphQL();  
 });
 
-// GraphQL Integration
-//app.MapGraphQL();
+
 
 app.UseAuthorization();
 app.MapControllerRoute(
