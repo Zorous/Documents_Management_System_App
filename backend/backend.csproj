@@ -8,6 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="GraphQL\NewFolder1\**" />
+    <Content Remove="GraphQL\NewFolder1\**" />
+    <EmbeddedResource Remove="GraphQL\NewFolder1\**" />
+    <None Remove="GraphQL\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Faker.Net" Version="2.0.163" />
     <PackageReference Include="HotChocolate.AspNetCore" Version="13.9.14" />
     <PackageReference Include="HotChocolate.AspNetCore.Playground" Version="10.5.5" />

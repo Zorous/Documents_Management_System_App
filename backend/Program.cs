@@ -6,6 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using HotChocolate.AspNetCore;
+using backend.GraphQL.Mutations;
+using HotChocolate;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -33,26 +35,36 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Register the DatabaseSeeder service
 builder.Services.AddScoped<DatabaseSeeder>();
 
-// Register the DatabaseSeeder service
-builder.Services.AddScoped<DatabaseSeeder>();
-
 // Register query services
 builder.Services.AddScoped<UserQuery>();
 builder.Services.AddScoped<DocumentQuery>();
 builder.Services.AddScoped<RoleQuery>();
-builder.Services.AddScoped<Queries>(); // Add this line
+builder.Services.AddScoped<TenantQuery>();          // Add TenantQuery
+builder.Services.AddScoped<DepartmentQuery>();      // Add DepartmentQuery
+builder.Services.AddScoped<DocumentAccessQuery>();  // Add DocumentAccessQuery
+builder.Services.AddScoped<PermissionQuery>();      // Add PermissionQuery
+builder.Services.AddScoped<PaymentQuery>();         // Add PaymentQuery
+builder.Services.AddScoped<RolePermissionQuery>();  // Add RolePermissionQuery
+builder.Services.AddScoped<UserRoleQuery>();        // Add UserRoleQuery
+builder.Services.AddScoped<Tenant_Department_User_Query>(); // Add Tenant_Department_User_Query
+
+// Register the main Queries class
+builder.Services.AddScoped<Queries>();
 
 // Configure GraphQL
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Queries>() // Register the root query type
+    .AddType<Schemas>() // Register your AuthorType or any other object types
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
-
 
 // Add MVC services
 builder.Services.AddControllersWithViews();
+
 // Add console logging
 builder.Logging.AddConsole();
+builder.Logging.SetMinimumLevel(LogLevel.Debug);
+
 
 var app = builder.Build();
 
@@ -79,12 +91,17 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAll");
+app.UseCors("AllowAllOrigins");
 app.UseStaticFiles();
 app.UseRouting();
 
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGraphQL();  // Add this for the GraphQL endpoint
+});
+
 // GraphQL Integration
-app.MapGraphQL();
+//app.MapGraphQL();
 
 app.UseAuthorization();
 app.MapControllerRoute(
