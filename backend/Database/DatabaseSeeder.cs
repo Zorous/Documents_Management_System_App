@@ -82,8 +82,8 @@ public class DatabaseSeeder
             _context.SaveChanges();
         }
 
-        // Seed User_Department_Tenant relationships
-        if (!_context.Tenant_Department_User.Any())
+        // Seed Tenant_Department_User relationships
+        if (!_context.Tenant_Department_Users.Any())
         {
             var users = _context.Users.ToList();
             var tenants = _context.Tenants.ToList();
@@ -92,11 +92,8 @@ public class DatabaseSeeder
             // Add relationships
             if (users.Any() && tenants.Any() && departments.Any())
             {
-                _context.Tenant_Department_User.AddRange(
-                    new Tenant_Department_User { UserId = users[0].UserId, TenantId = tenants[0].TenantId, DepartmentId = departments[0].DepartmentId },
-                    new Tenant_Department_User { UserId = users[0].UserId, TenantId = tenants[1].TenantId, DepartmentId = departments[1].DepartmentId },
-                    new Tenant_Department_User { UserId = users[1].UserId, TenantId = tenants[0].TenantId, DepartmentId = departments[2].DepartmentId },
-                    new Tenant_Department_User { UserId = users[2].UserId, TenantId = tenants[1].TenantId, DepartmentId = departments[3].DepartmentId }
+                _context.Tenant_Department_Users.AddRange(
+                    new Tenant_Department_User { UserId = users[0].UserId, TenantId = tenants[0].TenantId, DepartmentId = departments[0].DepartmentId }
                 );
 
                 _context.SaveChanges();
