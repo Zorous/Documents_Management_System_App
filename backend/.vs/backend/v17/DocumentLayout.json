@@ -1,0 +1,133 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\My Projects\\Documents_Management_System_App\\backend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\mutations\\permissionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:graphql\\mutations\\permissionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\mutations\\mutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:graphql\\mutations\\mutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{be4d7042-ba3f-11d2-840e-00c04f9902c1}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{004be353-6879-467c-9d1e-9ac23cdf6d49}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-15T07:22:46.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-15T07:22:39.855Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Mutations.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\Mutations.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Mutations\\Mutations.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\Mutations.cs",
+              "RelativeToolTip": "GraphQL\\Mutations\\Mutations.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAADwvyoAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T14:24:47.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAIwEQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T14:24:15.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PermissionMutations.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\PermissionMutations.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Mutations\\PermissionMutations.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\PermissionMutations.cs",
+              "RelativeToolTip": "GraphQL\\Mutations\\PermissionMutations.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T14:23:01.123Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 297,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
