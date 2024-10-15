@@ -32,19 +32,31 @@ namespace backend.GraphQL.Mutations
         public async Task<Permission> UpdatePermission(int permissionId, string permissionName)
         {
             var permission = await _context.Permissions.FindAsync(permissionId);
-            if (permission == null) throw new Exception("Permission not found.");
+            if (permission == null)
+            {
+                throw new Exception("Permission not found.");
+            }
 
             permission.PermissionName = permissionName;
+            permission.CreatedAt = DateTime.UtcNow;
             _context.Permissions.Update(permission);
             await _context.SaveChangesAsync();
+
+            // Detach the entity from the context after the update
+            _context.Entry(permission).State = EntityState.Detached;
+
             return permission;
         }
+
 
         // Delete Permission
         public async Task<bool> DeletePermission(int permissionId)
         {
             var permission = await _context.Permissions.FindAsync(permissionId);
-            if (permission == null) throw new Exception("Permission not found.");
+            if (permission == null)
+            {
+                throw new Exception("Permission not found.");
+            }
 
             _context.Permissions.Remove(permission);
             await _context.SaveChangesAsync();

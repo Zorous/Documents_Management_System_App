@@ -31,7 +31,10 @@ builder.Configuration
 
 // Add DbContext with PostgreSQL configuration
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+            .EnableSensitiveDataLogging()  // Enables detailed query logging
+           .EnableDetailedErrors()         // Adds more error details
+    );
 
 // Register the DatabaseSeeder service
 builder.Services.AddScoped<DatabaseSeeder>();

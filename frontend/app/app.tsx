@@ -1,29 +1,24 @@
-// In App.js in a new project
-
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-//import HomeScreen from '@/components/screens/HomeScreen';
+import { AuthProvider, useAuth } from './AuthContext';
+import TabbarLayout from './(tabs)/_layout'; // Assuming the TabbarLayout is in a layout folder
+import Login from '@/components/screens/Login';
 
-function HomeScreen() {
+const App = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{ fontSize: 50}}>Home Screen</Text>
-    </View>
+    <AuthProvider>
+      <NavigationContainer>
+        <AppNavigator />
+      </NavigationContainer>
+    </AuthProvider>
   );
-}
+};
 
-const Stack = createNativeStackNavigator();
+// Conditionally render the layout or login screen based on auth state
+const AppNavigator = () => {
+  const { isLoggedIn } = useAuth();
 
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
+  return isLoggedIn ? <TabbarLayout /> : <Login />;
+};
 
 export default App;

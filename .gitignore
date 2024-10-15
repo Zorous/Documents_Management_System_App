@@ -1,1 +1,2 @@
-*.vsidx
+backend/.vs
+*.vsidx'

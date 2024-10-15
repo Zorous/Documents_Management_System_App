@@ -51,12 +51,6 @@ export function Dashboard() {
   return (
     <View style={styles.container}>
       <View style={styles.mainContent}>
-        <Header 
-          greeting={greeting} 
-          username="John" 
-          onProfilePress={() => {/* Navigate to profile */}}
-          onMenuPress={() => setIsSidebarVisible(!isSidebarVisible)}
-        />
         <ScrollView style={styles.content}>
           <QuickStats />
           <RecentDocuments documents={recentDocuments} />
