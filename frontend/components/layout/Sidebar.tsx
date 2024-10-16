@@ -3,13 +3,11 @@ import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-nati
 import { Feather } from '@expo/vector-icons';
 import { COLORS } from '../../constants/Colors';
 import { SIZES, FONTS } from '../../constants/theme';
-import { MenuItem } from '../../types';
+import { menuItems } from '@/constants/menuItems';
 
-type SidebarProps = {
-  menuItems: MenuItem[];
-};
 
-export const Sidebar = ({ menuItems } : SidebarProps) => {
+export const Sidebar = ({ navigation }) => {
+
   return (
     <View style={styles.sidebar}>
       <View style={styles.logoContainer}>
@@ -20,7 +18,7 @@ export const Sidebar = ({ menuItems } : SidebarProps) => {
           <TouchableOpacity
             key={index}
             style={styles.menuItem}
-            onPress={item.onPress}
+            onPress={() => item.onPress(navigation)}
             accessibilityRole="button"
             accessibilityLabel={item.label}
           >

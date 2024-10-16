@@ -5,8 +5,9 @@ import { useAuth } from '@/app/AuthContext';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const { login } = useAuth(); // Use the useAuth hook to get the login function
-
+  const { login } = useAuth();
+  console.log("Login function from useAuth:", login);  // Check what is being returned
+  
 
   const handleLogin = () => {
     console.log("Login button clicked"); // Check if the button is clicked

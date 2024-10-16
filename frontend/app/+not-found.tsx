@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 const NotFound = () => {
     return (
         <View>
-            <Text>NOT FOUND 404</Text>
+            
         </View>
     );
 }

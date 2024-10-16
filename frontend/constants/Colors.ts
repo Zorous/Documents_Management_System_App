@@ -11,4 +11,6 @@ export const COLORS = {
   border: '#e0e0e0',
   white: '#ffffff',
   success: '#4CAF50',
+  dark: "#0000",
+  light:"#ffff"
 };
