@@ -4,7 +4,7 @@ import { StyleSheet, View } from 'react-native';
 const NotFound = () => {
     return (
         <View>
-            
+            NOT FOUND 404
         </View>
     );
 }

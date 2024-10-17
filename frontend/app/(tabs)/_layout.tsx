@@ -10,23 +10,10 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        headerShown: false,
+        headerShown: true,
       }}>
-      {menuItems.map((item) => (
-        <Tabs.Screen
-          key={item.label}
-          name={item.label.toLowerCase()} // Use lowercase for consistent naming
-          options={{
-            title: item.label,
-            tabBarIcon: ({ color, focused }) => (
-              <TabBarIcon
-                name={focused ? item.icon : `${item.icon}-outline`}
-                color={color}
-              />
-            ),
-          }}
-        />
-      ))}
+     
+    
     </Tabs>
   );
 }
