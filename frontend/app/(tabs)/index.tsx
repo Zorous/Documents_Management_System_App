@@ -1,12 +1,19 @@
-import { Image, StyleSheet, Platform, View } from 'react-native';
+import { Link } from 'expo-router';
+import { Image, StyleSheet, Platform, View, Text } from 'react-native';
 
 
 
 export default function HomeScreen() {
   return (
-    <View>
-      Index
+    <>
+    <View style={styles.stepContainer}>
+      <Text></Text>
     </View>
+
+
+    <Link href="/Dashboard">Dashbaord</Link>
+    
+    </>
   );
 }
 

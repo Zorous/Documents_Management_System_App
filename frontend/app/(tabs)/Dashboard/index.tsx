@@ -5,13 +5,14 @@ import { StyleSheet, View } from 'react-native';
 
 const Index = () => {
     return (
-        <Tabs  screenOptions={{
-            headerShown: true,
+        <><Tabs  screenOptions={{
+            headerShown: false,
             headerTitle: "Dashboard"
           }}>
-      
-    <Dashboard />
         </Tabs>
+
+        <Dashboard />
+        </>
     );
 }
 

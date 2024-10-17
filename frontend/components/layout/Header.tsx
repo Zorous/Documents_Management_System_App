@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -6,23 +6,30 @@ import {
   StyleSheet,
   Image,
   Modal,
+  Dimensions
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { COLORS } from "../../constants/Colors";
 import { SIZES, FONTS } from "../../constants/theme";
 import data from "../../data/data.json";
 
-const handleProfilePress = () => {
-  console.log("Profile pressed");
-  // Add your profile navigation logic here
-};
-
-const handleMenuPress = () => {
-  console.log("Menu pressed");
-  // Add your menu navigation logic here
-};
 export const Header = () => {
   const [modalVisible, setModalVisible] = useState(false);
+  const [SmallScreen, setSmallScreen] = useState(false); // Moved inside the component
+
+  useEffect(() => {
+    const updateLayout = () => {
+      const { width } = Dimensions.get("window");
+      setSmallScreen(width < 768); // Update screen size state based on width
+    };
+
+    const subscription = Dimensions.addEventListener("change", updateLayout);
+    updateLayout(); // Initial check when component mounts
+
+    return () => {
+      subscription?.remove(); // Clean up the subscription when component unmounts
+    };
+  }, []);
 
   const getGreeting = (): string => {
     const currentHour = new Date().getHours();
@@ -43,10 +50,18 @@ export const Header = () => {
         <Text style={styles.greeting}>{greeting},</Text>
         <Text style={styles.username}>{data[0].userName}</Text>
       </View>
+
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Image
-          source={{ uri: data[0].profilePicture }} // Remove the extra curly braces
-          style={styles.avatar}
+          source={{ uri: data[0].profilePicture }} // Correct profile picture
+          style={[
+            styles.avatar,
+            {
+              width: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03, // Adjust based on screen size
+              height: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03,
+              borderRadius: SmallScreen ? (SIZES.width * 0.1) / 2 : (SIZES.width * 0.03) / 2,
+            },
+          ]}
         />
       </TouchableOpacity>
 
@@ -60,7 +75,10 @@ export const Header = () => {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContainer}>
             <TouchableOpacity
-              onPress={handleProfilePress}
+              onPress={() => {
+                // Profile navigation logic here
+                setModalVisible(false); // Close modal on profile press
+              }}
               style={styles.modalOption}
             >
               <Text style={styles.modalText}>Profile</Text>
@@ -69,7 +87,6 @@ export const Header = () => {
               onPress={() => {
                 // Handle logout logic here
                 setModalVisible(false);
-                // Call a logout function if needed
               }}
               style={styles.modalOption}
             >
@@ -115,9 +132,7 @@ const styles = StyleSheet.create({
     color: COLORS.text,
   },
   avatar: {
-    width: SIZES.width * 0.03,
-    height: SIZES.width * 0.03,
-    borderRadius: (SIZES.width * 0.12) / 2,
+    // Avatar styles (width, height, borderRadius are dynamically set)
   },
   modalOverlay: {
     flex: 1,
