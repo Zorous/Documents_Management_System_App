@@ -1,3 +1,5 @@
+
+//@ts-nocheck
 import React, { useEffect, useState } from "react";
 import {
   View,
@@ -57,8 +59,8 @@ export const Header = () => {
           style={[
             styles.avatar,
             {
-              width: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03, 
-              height: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03,
+              width: SmallScreen ? SIZES.width * 0.03 : SIZES.width * 0.03, 
+              height: SmallScreen ? SIZES.width * 0.03 : SIZES.width * 0.03,
               borderRadius: SmallScreen ? (SIZES.width * 0.1) / 2 : (SIZES.width * 0.03) / 2,
             },
           ]}
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)", // Semi-transparent background
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
   },
   modalContainer: {
     width: "80%",
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   modalOption: {
-    width: "100%",
+    width: "80%",
     padding: SIZES.padding,
     alignItems: "center",
   },
