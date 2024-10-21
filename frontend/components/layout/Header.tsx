@@ -57,7 +57,7 @@ export const Header = () => {
           style={[
             styles.avatar,
             {
-              width: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03, // Adjust based on screen size
+              width: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03, 
               height: SmallScreen ? SIZES.width * 0.1 : SIZES.width * 0.03,
               borderRadius: SmallScreen ? (SIZES.width * 0.1) / 2 : (SIZES.width * 0.03) / 2,
             },
