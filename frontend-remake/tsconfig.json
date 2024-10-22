@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "strict": true, // Enable strict type-checking
+    "target": "esnext", // Modern JavaScript output
+    "moduleResolution": "node",
+    "jsx": "react-native", // JSX support for React Native
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enable esModuleInterop
+    "forceConsistentCasingInFileNames": true // Ensures file name consistency
+  },
+  "extends": "expo/tsconfig.base",
+  "include": [
+    "global.d.ts", // Global types
+    "**/*.ts", // Include all TypeScript files
+    "**/*.tsx", // Include all TypeScript + JSX files
+    "nativewind-env.d.ts", // NativeWind config
+    ".expo/types/**/*.ts" // Include Expo types
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules
+    "babel.config.js", // Exclude Babel config
+    "metro.config.js" // Exclude Metro config
+  ]
+}
