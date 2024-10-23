@@ -1,0 +1,13 @@
+src/
+  ├── app/
+  │   ├── index.tsx       // Home Screen
+  │   ├── sign-in.tsx     // Sign-In Page
+  │   ├── sign-up.tsx     // Sign-Up Page
+  │   └─ (app)/
+  │       ├── Dashboard.tsx
+  │       ├── Teams.tsx
+  ├── AuthContext.tsx
+  ├── ProtectedRoute.tsx
+  ├── App.tsx
+  ├── apolloClient.ts
+  └── global.css

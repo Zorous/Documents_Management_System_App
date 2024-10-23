@@ -1,7 +1,6 @@
-import { Header } from "./Header";
-import { Sidebar } from "./Sidebar";
+import Header from "./Header";
+import SideBar from "./SideBar";
+import BottomNavigation from "./BottomNavigaton";
 
 
-export {
-Header, Sidebar
-};
+export {Header, SideBar, BottomNavigation}

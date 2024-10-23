@@ -1,26 +1,26 @@
 using backend.Database;
 using backend.GraphQL.QueryType;
 using backend.GraphQL.Queries;
+using backend.GraphQL.Mutations;
+using backend.GraphQL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.IO;
 using HotChocolate.AspNetCore;
-using backend.GraphQL.Mutations;
-using HotChocolate;
-using backend.GraphQL;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // CORS Policy
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
-    {
-        builder.AllowAnyOrigin()
-               .AllowAnyHeader()
-               .AllowAnyMethod();
-    });
+    options.AddPolicy("AllowSpecificOrigin",
+        builder => builder
+            .WithOrigins("http://localhost:8081", "http://127.0.0.1:8081") // Specify allowed origins
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials()); // If you need to send credentials
 });
 
 // Load configuration from appsettings.json
@@ -32,9 +32,9 @@ builder.Configuration
 // Add DbContext with PostgreSQL configuration
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
-            .EnableSensitiveDataLogging()  // Enables detailed query logging
+           .EnableSensitiveDataLogging()  // Enables detailed query logging
            .EnableDetailedErrors()         // Adds more error details
-    );
+);
 
 // Register the DatabaseSeeder service
 builder.Services.AddScoped<DatabaseSeeder>();
@@ -43,14 +43,14 @@ builder.Services.AddScoped<DatabaseSeeder>();
 builder.Services.AddScoped<UserQuery>();
 builder.Services.AddScoped<DocumentQuery>();
 builder.Services.AddScoped<RoleQuery>();
-builder.Services.AddScoped<TenantQuery>();          // Add TenantQuery
-builder.Services.AddScoped<DepartmentQuery>();      // Add DepartmentQuery
-builder.Services.AddScoped<DocumentAccessQuery>();  // Add DocumentAccessQuery
-builder.Services.AddScoped<PermissionQuery>();      // Add PermissionQuery
-builder.Services.AddScoped<PaymentQuery>();         // Add PaymentQuery
-builder.Services.AddScoped<RolePermissionQuery>();  // Add RolePermissionQuery
-builder.Services.AddScoped<UserRoleQuery>();        // Add UserRoleQuery
-builder.Services.AddScoped<Tenant_Department_User_Query>(); // Add Tenant_Department_User_Query
+builder.Services.AddScoped<TenantQuery>();
+builder.Services.AddScoped<DepartmentQuery>();
+builder.Services.AddScoped<DocumentAccessQuery>();
+builder.Services.AddScoped<PermissionQuery>();
+builder.Services.AddScoped<PaymentQuery>();
+builder.Services.AddScoped<RolePermissionQuery>();
+builder.Services.AddScoped<UserRoleQuery>();
+builder.Services.AddScoped<Tenant_Department_User_Query>();
 
 // Register the main Queries class
 builder.Services.AddScoped<Queries>();
@@ -68,7 +68,6 @@ builder.Services.AddScoped<PaymentMutations>();
 builder.Services.AddScoped<Tenant_Department_UserMutations>();
 builder.Services.AddScoped<PermissionMutations>();
 
-
 // Configure GraphQL
 builder.Services
     .AddGraphQLServer()
@@ -77,8 +76,6 @@ builder.Services
     .AddType<Schemas>() // Register your AuthorType or any other object types
     .ModifyRequestOptions(opt => opt.IncludeExceptionDetails = true);
 
-
-
 // Add MVC services
 builder.Services.AddControllersWithViews();
 
@@ -86,6 +83,8 @@ builder.Services.AddControllersWithViews();
 builder.Logging.AddConsole();
 builder.Logging.SetMinimumLevel(LogLevel.Debug);
 
+// Add HttpClient for proxy functionality
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 
@@ -112,21 +111,21 @@ else
 }
 
 app.UseHttpsRedirection();
-app.UseCors("AllowAllOrigins");
+app.UseCors("AllowSpecificOrigin");
 app.UseStaticFiles();
 app.UseRouting();
-
-app.UseEndpoints(endpoints =>
-{
-    // Add this for the GraphQL endpoint
-    endpoints.MapGraphQL();  
-});
-
-
-
 app.UseAuthorization();
+
+// Map GraphQL endpoint
+app.MapGraphQL();
+
+// Map API Proxy endpoint
+app.MapControllers();
+
+// Set up the default route for MVC controllers
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

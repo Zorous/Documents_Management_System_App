@@ -3,12 +3,36 @@
   "WorkspaceRootPath": "C:\\My Projects\\Documents_Management_System_App\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\controllers\\proxycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:controllers\\proxycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\types\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:graphql\\types\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\mutations\\usermutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:graphql\\mutations\\usermutation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -17,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\mutations\\permissionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:graphql\\mutations\\permissionmutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\mutations\\mutations.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,19 +82,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
+              "Title": "UserMutation.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\UserMutation.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Mutations\\UserMutation.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\UserMutation.cs",
+              "RelativeToolTip": "GraphQL\\Mutations\\UserMutation.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAgwBcAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T11:59:49.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
               "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:55:01.528Z"
+              "WhenOpened": "2024-10-15T11:55:01.528Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "appsettings.Development.json",
@@ -90,32 +120,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.json*",
-              "RelativeToolTip": "appsettings.json*",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAQwAwAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-15T07:22:46.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwCgAAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-15T07:22:39.855Z"
+              "WhenOpened": "2024-10-15T07:22:39.855Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "Mutations.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\Mutations.cs",
               "RelativeDocumentMoniker": "GraphQL\\Mutations\\Mutations.cs",
@@ -127,19 +158,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAmwCIAAAAMAAAAAAAAAA==",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs*",
+              "RelativeToolTip": "Program.cs*",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAgwGUAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-14T14:24:15.604Z"
+              "WhenOpened": "2024-10-14T14:24:15.604Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "ProxyController.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\ProxyController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProxyController.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\ProxyController.cs",
+              "RelativeToolTip": "Controllers\\ProxyController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T14:07:30.31Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserType.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Types\\UserType.cs",
+              "RelativeDocumentMoniker": "GraphQL\\Types\\UserType.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Types\\UserType.cs",
+              "RelativeToolTip": "GraphQL\\Types\\UserType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T12:05:41.823Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T14:07:05.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PermissionMutations.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\GraphQL\\Mutations\\PermissionMutations.cs",
               "RelativeDocumentMoniker": "GraphQL\\Mutations\\PermissionMutations.cs",

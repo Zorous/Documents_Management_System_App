@@ -27,21 +27,6 @@
       "createdDocuments": [],
       "documentAccesses": [],
       "tenant_Department_Users": []
-    },
-    {
-      "userId": 3,
-      "userName": "alice_jones",
-      "profilePicture": "https://randomuser.me/api/portraits/women/3.jpg",
-      "email": "alice@example.com",
-      "passwordHash": "securepassword789", 
-      "createdAt": "2023-10-03T12:00:00Z",
-      "userRoles": [
-        { "userRoleId": 4, "roleId": 2 },
-        { "userRoleId": 5, "roleId": 3 }
-      ],
-      "createdDocuments": [],
-      "documentAccesses": [],
-      "tenant_Department_Users": []
     }
   ]
   

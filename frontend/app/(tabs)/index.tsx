@@ -1,5 +1,4 @@
-import { Link } from 'expo-router';
-import { Image, StyleSheet, Platform, View, Text } from 'react-native';
+import { Tabs } from 'expo-router';
 import Index from './Dashboard';
 
 
@@ -7,26 +6,13 @@ import Index from './Dashboard';
 export default function HomeScreen() {
   return (
     <>
+    <Tabs  screenOptions={{
+            headerShown: false,
+            headerTitle: "Dashboard"
+          }}>
     <Index />
+    </Tabs>
     </>
   );
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
