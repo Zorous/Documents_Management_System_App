@@ -1,11 +1,6 @@
-// metro.config.js
-const path = require('path');
+const { getDefaultConfig } = require("expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
 
-module.exports = {
-  transformer: {
-    assetPlugins: ['expo-asset/tools/hashAssetFiles'],
-  },
-  resolver: {
-    assetExts: ['db', 'bin', 'cjs', 'mjs'],
-  },
-};
+const config = getDefaultConfig(__dirname);
+
+module.exports = withNativeWind(config, { input: "./src/global.css" });

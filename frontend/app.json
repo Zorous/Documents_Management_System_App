@@ -1,37 +1,21 @@
 {
   "expo": {
-    "name": "frontend",
-    "slug": "frontend",
-    "main" : "expo-router/entry",
-    "version": "1.0.0",
-    "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "frontend",
+    "scheme": "acme",
     "userInterfaceStyle": "automatic",
-    "splash": {
-      "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "ios": {
-      "supportsTablet": true
-    },
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
-      }
-    },
+    "orientation": "default",
     "web": {
-      "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "bundler": "metro"
     },
     "plugins": [
-      "expo-router"
+      [
+        "expo-router",
+        {
+          "origin": "https://n"
+        }
+      ]
     ],
-    "experiments": {
-      "typedRoutes": true
-    }
+    "name": "frontend-remake",
+    "slug": "frontend-remake"
   }
 }

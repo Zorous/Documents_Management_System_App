@@ -1,35 +1,32 @@
-
-//@ts-nocheck
+// Header.js
 import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
   TouchableOpacity,
-  StyleSheet,
   Image,
   Modal,
-  Dimensions
+  Dimensions,
 } from "react-native";
-import { Feather } from "@expo/vector-icons";
-import { COLORS } from "../../constants/Colors";
-import { SIZES, FONTS } from "../../constants/theme";
-import data from "../../data/data.json";
+import { COLORS } from "../../constants/Colors"; // Adjust the import path
+import { SIZES, FONTS } from "../../constants/theme"; // Adjust the import path
+import data from "../../data/data.json"; // Adjust the import path
 
-export const Header = () => {
+const Header = () => {
   const [modalVisible, setModalVisible] = useState(false);
-  const [SmallScreen, setSmallScreen] = useState(false); // Moved inside the component
+  const [SmallScreen, setSmallScreen] = useState(false);
 
   useEffect(() => {
     const updateLayout = () => {
       const { width } = Dimensions.get("window");
-      setSmallScreen(width < 768); // Update screen size state based on width
+      setSmallScreen(width < 768);
     };
 
     const subscription = Dimensions.addEventListener("change", updateLayout);
-    updateLayout(); // Initial check when component mounts
+    updateLayout();
 
     return () => {
-      subscription?.remove(); // Clean up the subscription when component unmounts
+      subscription?.remove();
     };
   }, []);
 
@@ -47,58 +44,48 @@ export const Header = () => {
   const greeting = getGreeting();
 
   return (
-    <View style={styles.header}>
+    <View className="flex flex-row justify-between items-center p-4 bg-white rounded-b-lg shadow-md w-5/5">
       <View>
-        <Text style={styles.greeting}>{greeting},</Text>
-        <Text style={styles.username}>{data[0].userName}</Text>
+        <Text className="text-gray-600 text-lg">{greeting},</Text>
+        <Text className="text-gray-800 text-xl font-bold">{data[0].userName}</Text>
       </View>
 
       <TouchableOpacity onPress={() => setModalVisible(true)}>
         <Image
-          source={{ uri: data[0].profilePicture }} // Correct profile picture
-          style={[
-            styles.avatar,
-            {
-              width: SmallScreen ? SIZES.width * 0.03 : SIZES.width * 0.03, 
-              height: SmallScreen ? SIZES.width * 0.03 : SIZES.width * 0.03,
-              borderRadius: SmallScreen ? (SIZES.width * 0.1) / 2 : (SIZES.width * 0.03) / 2,
-            },
-          ]}
+          source={{ uri: data[0].profilePicture }}
+          className={`w-12 h-12 rounded-full`}
         />
       </TouchableOpacity>
 
-      {/* Modal for Profile Options */}
       <Modal
         transparent={true}
         animationType="slide"
         visible={modalVisible}
         onRequestClose={() => setModalVisible(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContainer}>
+        <View className="flex-1 justify-center items-center bg-black bg-opacity-50">
+          <View className="w-4/5 bg-white rounded-lg p-4 shadow-lg">
             <TouchableOpacity
               onPress={() => {
-                // Profile navigation logic here
-                setModalVisible(false); // Close modal on profile press
+                setModalVisible(false);
               }}
-              style={styles.modalOption}
+              className="w-full p-4 items-center"
             >
-              <Text style={styles.modalText}>Profile</Text>
+              <Text className="text-lg text-gray-800">{`Profile`}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => {
-                // Handle logout logic here
                 setModalVisible(false);
               }}
-              style={styles.modalOption}
+              className="w-full p-4 items-center"
             >
-              <Text style={styles.modalText}>Logout</Text>
+              <Text className="text-lg text-gray-800">{`Logout`}</Text>
             </TouchableOpacity>
             <TouchableOpacity
               onPress={() => setModalVisible(false)}
-              style={styles.closeButton}
+              className="mt-4"
             >
-              <Text style={styles.closeButtonText}>Close</Text>
+              <Text className="text-blue-500">{`Close`}</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -107,63 +94,4 @@ export const Header = () => {
   );
 };
 
-const styles = StyleSheet.create({
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: SIZES.padding,
-    backgroundColor: COLORS.white,
-    borderBottomLeftRadius: SIZES.radius,
-    borderBottomRightRadius: SIZES.radius,
-    shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  greeting: {
-    ...FONTS.h3,
-    color: COLORS.textLight,
-  },
-  username: {
-    ...FONTS.h2,
-    color: COLORS.text,
-  },
-  avatar: {
-    // Avatar styles (width, height, borderRadius are dynamically set)
-  },
-  modalOverlay: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-  },
-  modalContainer: {
-    width: "80%",
-    backgroundColor: COLORS.white,
-    borderRadius: SIZES.radius,
-    padding: SIZES.padding,
-    alignItems: "center",
-    elevation: 5,
-  },
-  modalOption: {
-    width: "80%",
-    padding: SIZES.padding,
-    alignItems: "center",
-  },
-  modalText: {
-    ...FONTS.h2,
-    color: COLORS.text,
-  },
-  closeButton: {
-    marginTop: SIZES.padding,
-  },
-  closeButtonText: {
-    ...FONTS.body3,
-    color: COLORS.primary,
-  },
-});
+export default Header;
