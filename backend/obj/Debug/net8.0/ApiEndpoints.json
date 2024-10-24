@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "ProxyController",
-    "Method": "PostGraphQL",
-    "RelativePath": "api/proxy/graphql",
+    "ContainingType": "backend.Controllers.ProxyController",
+    "Method": "ProxyGraphQL",
+    "RelativePath": "api/Proxy/graphql",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

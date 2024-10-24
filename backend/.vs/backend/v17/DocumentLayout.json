@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:controllers\\proxycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EDBBE98F-44E1-4579-AB03-ADC1CE5F5E28}|backend.csproj|c:\\my projects\\documents_management_system_app\\backend\\graphql\\types\\usertype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -90,8 +90,7 @@
               "RelativeToolTip": "GraphQL\\Mutations\\UserMutation.cs",
               "ViewState": "AgIAABAAAAAAAAAAAAAgwBcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T11:59:49.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T11:59:49.212Z"
             },
             {
               "$type": "Document",
@@ -103,8 +102,7 @@
               "RelativeToolTip": "Models\\User.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-15T11:55:01.528Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T11:55:01.528Z"
             },
             {
               "$type": "Document",
@@ -128,18 +126,17 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-15T07:22:46.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-15T07:22:46.536Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
               "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Properties\\launchSettings.json",
               "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBwAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-10-15T07:22:39.855Z",
               "EditorCaption": ""
@@ -158,13 +155,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs*",
-              "RelativeToolTip": "Program.cs*",
-              "ViewState": "AgIAAF4AAAAAAAAAAAAgwGUAAAAmAAAAAAAAAA==",
+              "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAAHUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-14T14:24:15.604Z",
               "EditorCaption": ""
@@ -177,7 +174,7 @@
               "RelativeDocumentMoniker": "Controllers\\ProxyController.cs",
               "ToolTip": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\ProxyController.cs",
               "RelativeToolTip": "Controllers\\ProxyController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-23T14:07:30.31Z",
               "EditorCaption": ""
@@ -192,12 +189,11 @@
               "RelativeToolTip": "GraphQL\\Types\\UserType.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T12:05:41.823Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T12:05:41.823Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\My Projects\\Documents_Management_System_App\\backend\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -205,8 +201,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-23T14:07:05.478Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-23T14:07:05.478Z"
             },
             {
               "$type": "Document",

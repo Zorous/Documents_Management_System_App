@@ -1,21 +1,35 @@
-﻿using System.Net.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-[ApiController]
-[Route("api/proxy")]
-public class ProxyController : ControllerBase
+namespace backend.Controllers
 {
-    private readonly HttpClient _httpClient;
-
-    public ProxyController(HttpClient httpClient)
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ProxyController : ControllerBase
     {
-        _httpClient = httpClient;
-    }
+        private readonly HttpClient _httpClient;
 
-    [HttpPost("graphql")]
-    public async Task<IActionResult> PostGraphQL([FromBody] object query)
-    {
-        var response = await _httpClient.PostAsJsonAsync("http://172.20.61.38:5000/graphql", query);
-        return StatusCode((int)response.StatusCode, await response.Content.ReadAsStringAsync());
+        public ProxyController(HttpClient httpClient)
+        {
+            _httpClient = httpClient;
+        }
+
+        [HttpPost("graphql")]
+        public async Task<IActionResult> ProxyGraphQL([FromBody] object query)
+        {
+            var requestMessage = new HttpRequestMessage(HttpMethod.Post, "https://localhost:5001/graphql/")
+            {
+                Content = new StringContent(query.ToString(), System.Text.Encoding.UTF8, "application/json")
+            };
+
+            // Send request to the actual GraphQL server
+            var response = await _httpClient.SendAsync(requestMessage);
+
+            var responseBody = await response.Content.ReadAsStringAsync();
+
+            // Forward the response back to the frontend
+            return Content(responseBody, "application/json");
+        }
     }
 }

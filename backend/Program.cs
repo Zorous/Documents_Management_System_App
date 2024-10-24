@@ -17,11 +17,13 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowSpecificOrigin",
         builder => builder
-            .WithOrigins("http://localhost:8081", "http://127.0.0.1:8081") // Specify allowed origins
+            .WithOrigins("http://localhost:8081") // Match exactly, no need for 127.0.0.1 unless both are required
             .AllowAnyHeader()
             .AllowAnyMethod()
+            .SetIsOriginAllowed(origin => true) // Allow requests from the allowed origins
             .AllowCredentials()); // If you need to send credentials
 });
+
 
 // Load configuration from appsettings.json
 builder.Configuration
@@ -110,9 +112,12 @@ else
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
-app.UseCors("AllowSpecificOrigin");
 app.UseStaticFiles();
+
+app.UseCors("AllowSpecificOrigin");
+
 app.UseRouting();
 app.UseAuthorization();
 
